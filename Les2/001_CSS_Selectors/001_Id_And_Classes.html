@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Id and classes</title>
+    <style>
+      /* #id1 {
+            color: red;
+        } */
+      /* div.class1 {
+            color: blue;
+            font-size: 14px;
+            text-decoration: underline;
+        } */
+    </style>
+  </head>
+  <body>
+    <h1 id="id1">Title</h1>
+    <div class="class1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+        consequuntur, obcaecati recusandae enim laboriosam eaque, sint incidunt.
+        Perferendis mollitia incidunt blanditiis eveniet, fuga sapiente. Magni
+        dicta maxime fugiat sint soluta?
+    </div>
+    <script>
+      let header = document.querySelector("#id1");
+      header.style.color = "red";
+      addToId(header);
+      let main = document.querySelector(".class1");
+      main.style.color = "blue";
+      main.style.fontSize = "14px";
+      main.style.textDecoration = "underline";
+      function addToId(node) {
+        node.style.marginTop = "10px";
+        node.style.backgroundColor = "black";
+      }
+    </script>
+  </body>
+</html>

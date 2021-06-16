@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div id="one">one</div>
+
+    <button onclick="addDiv()">Добавить Див</button>
+
+    <script>
+    // Добавьте после дива с id=one еще один див с текстом two и id=two
+    // На клик по id=two добавьте перед ним див с id - two_first, а див с id=two измените на two_second 
+    function addDiv(){
+    let div = document.createElement('div');
+    div.textContent = 'two'
+    div.tabIndex = 'two'
+
+    document.body.append(div);
+    }
+    </script>
+</body>
+</html>
