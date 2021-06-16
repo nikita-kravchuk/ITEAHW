@@ -1,0 +1,82 @@
+<!-- Lesson 1 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function append(form) {
+        if (form.input.value) {
+          var newItem = document.createElement("li");
+          newItem.innerHTML = form.input.value;
+          document.getElementById("myUl").appendChild(newItem);
+        }
+      }
+
+      function prepend(form) {
+        if (form.input.value) {
+          var newItem = document.createElement("li");
+          newItem.innerHTML = form.input.value;
+          document.getElementById("myUl").prepend(newItem);
+        }
+      }
+      function remove() {
+        var element = document.getElementById("myUl");
+
+        element.removeChild(element.lastChild);
+      }
+
+      function chooseFst() {
+        var element = document.getElementById("chs");
+        var item = document.getElementById('1');
+        element.innerHTML = item.innerText
+      } 
+
+      function chooseNxt() {
+        var element = document.getElementById("chs");
+        var item = document.getElementById('1');
+        element.innerHTML = item.nextElementSibling.innerHTML;
+      } 
+
+      function chooseLst() {
+        var element = document.getElementById("chs");
+        var item = document.getElementById('5');
+        element.innerHTML = item.innerText
+      } 
+
+      function choosePrev() {
+        var element = document.getElementById("chs");
+        var item = document.getElementById('5');
+        element.innerHTML = item.previousElementSibling.innerHTML;
+      } 
+    </script>
+    <h2>My list</h2>
+    <ul id="myUl">
+      <li id="1">Dog</li>
+      <li id="2">Cat</li>
+      <li id="3">Snake</li>
+      <li id="4">Mouse</li>
+      <li id="5">Bull</li>
+    </ul>
+    <form>
+        <p id="chs">Ваш выбор</p>
+      Введите текст, который будет добавлен или заменен в элементе:
+      <input type="text" id="myinput" name="input" size="30" /><br />
+      <input type="button" value="Добавить" onclick="append(this.form)" />
+      <input
+        type="button"
+        value="Добавить в начало"
+        onclick="prepend(this.form)"
+      />
+      <input type="button" value="Удалить" onclick="remove()" />
+      <input type="button" value="Выбрать первый" onclick="chooseFst()" />
+      <input type="button" value="Выбрать последний" onclick="chooseLst()"/>
+      <input type="button" value="Выбрать следующий" onclick="chooseNxt()"/>
+      <input type="button" value="Выбрать предыдущий" onclick="choosePrev()"/>
+    </form>
+  </body>
+</html>
